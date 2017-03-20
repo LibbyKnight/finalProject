@@ -14,4 +14,4 @@ function AdminPageCtrl($stateParams) {
 		// heroFightOutcome: $stateParams.heroFightOutcome
 	}  	
 
-}
+
