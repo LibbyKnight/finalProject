@@ -52,15 +52,15 @@ var Instructions = mongoose.model("Instructions", Instructions);
 module.exports = Instructions;
 
 
-var classVideo = new Instructions({ category: 'AngularJS',  videoName: 'angularpart1', videoLink: 'images/video1.mp4', transcript: {
-        "1123:554" : "TEST CODE1",
-        "1132:555" : "TEST CODE2"}});
+// var classVideo = new Instructions({ category: 'AngularJS',  videoName: 'angularpart1', videoLink: 'images/video1.mp4', transcript: {
+//         "1123:554" : "TEST CODE1",
+//         "1132:555" : "TEST CODE2"}});
 
-console.log(classVideo.Instructions); 
+// console.log(classVideo.Instructions); 
 
-classVideo.save(function (err, classVideo) {
+// classVideo.save(function (err, classVideo) {
 
-  if (err) return console.error(err);
+//   if (err) return console.error(err);
 
 
-});
+// });
