@@ -18,7 +18,7 @@ function GetVideoService($http) {
         addVideo: function (category, videoName, videoLink, transcript) {
         	$http({
         		method: 'POST',
-        		url: '/api',
+        		url: '/topic',
         		data: {
         			category: category,
         			videoName: videoName,

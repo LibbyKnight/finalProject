@@ -53,14 +53,14 @@ app.listen(PORT, function() {
 
 app.get("/", function(req, res) {
 
-  Instructions.find({}, function(err, doc) {
+  Instructions.find({}, function(err, data) {
 
   	if (err) {
   		res.send(err);
   	}
 
   	else {
-  		console.log(doc);
+  		console.log(data);
   	}
   });
 
