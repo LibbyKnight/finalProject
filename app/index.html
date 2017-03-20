@@ -1,0 +1,74 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>UCF Coding Bootcamp Companion App</title>
+
+		<!-- angularjs and ui router tags -->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+
+        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+		<!-- Latest compiled and minified CSS -->
+
+		<!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+<!-- 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		Optional theme
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+
+
+		<!-- Latest compiled and minified JavaScript -->
+
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</head>
+<body ng-app="ucfCompanionApp">
+	
+
+	<ui-view></ui-view>
+
+	<!-- injections -->
+
+	<script src="ucfCompanionApp/ucfCompanionApp.module.js"></script>
+
+	<!-- landingPage injections -->
+
+	<script src="ucfCompanionApp/features/landingPage/landingPage.module.js"></script>
+	<script src="ucfCompanionApp/features/landingPage/landingPage.controller.js"></script>
+	<script src="ucfCompanionApp/features/landingPage/landingPage.route.js"></script>
+
+
+	<!-- mainPage injections -->
+
+	<script src="ucfCompanionApp/features/mainPage/mainPage.module.js"></script>
+	<script src="ucfCompanionApp/features/mainPage/mainPage.controller.js"></script>
+	<script src="ucfCompanionApp/features/mainPage/mainPage.route.js"></script>
+
+	<!-- topicPage injections -->
+
+	<script src="ucfCompanionApp/features/topicPage/topicPage.module.js"></script>
+	<script src="ucfCompanionApp/features/topicPage/topicPage.controller.js"></script>
+	<script src="ucfCompanionApp/features/topicPage/topicPage.route.js"></script>
+
+	<!-- adminPage injections -->
+
+	<script src="ucfCompanionApp/features/adminPage/adminPage.module.js"></script>
+	<script src="ucfCompanionApp/features/adminPage/adminPage.controller.js"></script>
+	<script src="ucfCompanionApp/features/adminPage/adminPage.route.js"></script>
+
+</body>
+</html>
