@@ -1,4 +1,4 @@
 angular
 	.module('ucfCompanionApp.topicPage', [
-		'ucfCompanionApp.component.navbar'
+		'ucfCompanionApp.component.getVideo'
 		]);

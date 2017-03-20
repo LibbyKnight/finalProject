@@ -51,7 +51,7 @@ app.listen(PORT, function() {
  module.exports = db;
 
 
-app.get("/test", function(req, res) {
+app.get("/topic", function(req, res) {
 
   Instructions.find({}, function(err, doc) {
 
@@ -63,6 +63,23 @@ app.get("/test", function(req, res) {
   		console.log(doc);
 
   	}
-  })
+  });
+
+});
+
+app.post('/', function(req, res) {
+
+  // create a new todo object
+  var newInstructions = new Instructions({
+    category: category,
+    videoName: videoName,
+    videoLink: videoLink,
+    transcript: transcript
+  });
+
+newInstructions.save(function (err, newInstructions) {
+    if (error) console.log('error saving to list', err);
+    response.sendStatus(200);
+  });
 
 });

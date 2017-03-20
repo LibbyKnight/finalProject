@@ -31,7 +31,8 @@ var Instructions = new Schema({
   videoLink: {
 
     type: String,
-    required: "Video is required."
+    required: "Video is required.",
+    unique: true
     
   },
 
