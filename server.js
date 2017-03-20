@@ -51,10 +51,10 @@ app.listen(PORT, function() {
  module.exports = db;
 
 
-app.get("/topic", function(req, res) {
+app.get("/", function(req, res) {
 
   Instructions.find({}, function(err, doc) {
-
+    
   	if (err) {
   		res.send(err);
   	}
