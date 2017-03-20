@@ -1,5 +1,5 @@
 angular
-	.module('ucfCompnaionApp.component.getVideo')
+	.module('ucfCompanionApp.component.getVideo')
 	.service('getVideo', GetVideoService);
 
 function GetVideoService($http) {
@@ -35,19 +35,19 @@ function GetVideoService($http) {
         // updating a video from complete to incomplete and vice versa
         // id is the video item id, and completed is a boolean true/false
         // for setting the status of the video
-        editVideo: function (id, completed) {
-            $http({
-        		method: 'PUT',
-        		url: '/api',
-        		data: {
-        			_id: id,
-        			isCompleted: completed
-        		}
-        	}).then(function (response) {
-                //do nothing
-            }).catch(function(error) {
-                console.log('error putting', error);
-            })
-        }
+        // editVideo: function (id, completed) {
+        //     $http({
+        // 		method: 'PUT',
+        // 		url: '/api',
+        // 		data: {
+        // 			_id: id,
+        // 			isCompleted: completed
+        // 		}
+        // 	}).then(function (response) {
+        //         //do nothing
+        //     }).catch(function(error) {
+        //         console.log('error putting', error);
+        //     })
+        // }
     };
 }

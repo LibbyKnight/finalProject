@@ -57,7 +57,7 @@ module.exports = Instructions;
 //         "1123:554" : "TEST CODE1",
 //         "1132:555" : "TEST CODE2"}});
 
-// console.log(classVideo.Instructions); 
+console.log(Instructions); 
 
 // classVideo.save(function (err, classVideo) {
 

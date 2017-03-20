@@ -1,7 +1,7 @@
 angular
 	.module('ucfCompanionApp', [
 		'ui.router',
-		'ucfCompanionApp.langingPage',
+		'ucfCompanionApp.landingPage',
 		'ucfCompanionApp.mainPage',
 		'ucfCompanionApp.topicPage',
 		'ucfCompanionApp.adminPage'

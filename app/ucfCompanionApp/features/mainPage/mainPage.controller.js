@@ -6,12 +6,12 @@ angular
 function MainPageCtrl($stateParams) {
     var vm = this; // vm stands for View Model - anything on "the vm" is exposed to the view
 	
-	vm.story = {
-		heroName: $stateParams.heroName,
-		heroGender: $stateParams.heroGender,
-		heroCity: $stateParams.heroCity,
-		heroFights: $stateParams.heroFights,
-		heroFightOutcome: $stateParams.heroFightOutcome
-	}  	
+	// vm.story = {
+	// 	heroName: $stateParams.heroName,
+	// 	heroGender: $stateParams.heroGender,
+	// 	heroCity: $stateParams.heroCity,
+	// 	heroFights: $stateParams.heroFights,
+	// 	heroFightOutcome: $stateParams.heroFightOutcome
+	// }  	
 
 }

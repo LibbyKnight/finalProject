@@ -2,7 +2,7 @@
     .module('ucfCompanionApp.adminPage')
     .config(adminPageConfig);
 
-function landingpageConfig($stateProvider) {
+function adminPageConfig($stateProvider) {
     // $stateProvider is an Angular service exposed by the ui-router library
     // this service allows us to define the "states" for our application
     //
