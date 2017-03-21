@@ -6,19 +6,14 @@ function GetVideoService($http) {
     return {
         // getting all the videos from the router
         getTheVideo: function (getVideo) {
-            $http.get('/api')
-                .then(function (response) {
-                    response.data.forEach(function(item) {
-                        getVideo.push(item);
-                    });
-                });
+            return $http.get('/api');
         },
 
         // adding a new video via the router
         addVideo: function (category, videoName, videoLink, transcript) {
         	$http({
         		method: 'POST',
-        		url: '/topic',
+        		url: '/api',
         		data: {
         			category: category,
         			videoName: videoName,

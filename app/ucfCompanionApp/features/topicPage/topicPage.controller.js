@@ -14,7 +14,9 @@ function TopicPageCtrl(getVideo) {
 	// vm.currentDate = makeTheDate();
 
 	// use the getVideo service to get all our getVideo from the database
-	getVideo.getTheVideo(vm.videoInfo);
+	getVideo.getTheVideo(vm.videoInfo).then(function (response) {
+        vm.videoInfo = response.data;
+    });
 
 	// when user clicks task comleted on the list state, use the getVideo
 	// service to change the status of isCompleted to true

@@ -3,7 +3,6 @@ var express = require('express');
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
-var Promise = require("bluebird");
 
 
 //Require the model
@@ -15,11 +14,9 @@ var app = express();
 //Port
 var PORT = 3000;
 
-mongoose.Promise = Promise;
-
-
 // set up body-parser
 app.use(logger("dev"));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: false
 }));
@@ -51,8 +48,8 @@ app.listen(PORT, function() {
  module.exports = db;
 
 
-app.get("/", function(req, res) {
-
+app.get("/api", function(req, res) {
+  console.log('hit');
   Instructions.find({}, function(err, data) {
 
   	if (err) {
@@ -60,10 +57,16 @@ app.get("/", function(req, res) {
   	}
 
   	else {
-  		console.log(data);
+  		res.send(data);
   	}
   });
 
+});
+
+
+
+app.post('/api', function(req, res, next) {
+  console.log(req.body);
 });
 
 app.post('/', function(req, res) {
