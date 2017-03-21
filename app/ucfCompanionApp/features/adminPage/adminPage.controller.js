@@ -6,12 +6,25 @@ angular
 function AdminPageCtrl($stateParams) {
     var vm = this; // vm stands for View Model - anything on "the vm" is exposed to the view
 	
-	// vm.story = {
-		// heroName: $stateParams.heroName,
-		// heroGender: $stateParams.heroGender,
-		// heroCity: $stateParams.heroCity,
-		// heroFights: $stateParams.heroFights,
-		// heroFightOutcome: $stateParams.heroFightOutcome
+	vm.addVideo = function() {
+
+		getVideo.addVideo(vm.getVideo.category, vm.getVideo.videoName, vm.getVideo.videoLink, vm.getVideo.trancript);
+
+
+
+		vm.newVideo = {
+
+			catergory: '',
+
+			videoName: '',
+
+			videoLink: '',
+
+			trancript: ''
+
+		}
+
+	}
 	}  	
 
 
