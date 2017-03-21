@@ -85,3 +85,17 @@ newInstructions.save(function (err, newInstructions) {
   });
 
 });
+
+app.put('/api', function(request, response) {
+
+  newInstructions.findOneAndUpdate(request.body._id, {isCompleted: request.body.isCompleted}, function(error, data) {
+
+    if (error) console.log('error updating to do list');
+
+    response.sendStatus(200);
+
+  });
+
+
+
+});

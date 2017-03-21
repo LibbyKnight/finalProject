@@ -65,3 +65,10 @@ module.exports = Instructions;
 
 
 // });
+
+var query = {'videoLink':req.user.videoLink};
+req.newData.videoLink = req.user.username;
+Instructions.findOneAndUpdate(query, req.newData, {upsert:true}, function(err, doc){
+    if (err) return res.send(500, { error: err });
+    return res.send("succesfully saved");
+});

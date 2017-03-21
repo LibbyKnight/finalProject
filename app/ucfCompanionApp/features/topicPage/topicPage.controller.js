@@ -18,6 +18,10 @@ function TopicPageCtrl(getVideo) {
         vm.videoInfo = response.data;
     });
 
+    vm.image = {
+ 		src:'/ucfCompanionApp/layouts/assets/images/AngularJS_logo.png'
+	} ; 
+
 	// when user clicks task comleted on the list state, use the getVideo
 	// service to change the status of isCompleted to true
 	// send the id, and the status we want to update it to

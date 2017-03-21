@@ -42,7 +42,8 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <img src="../../layouts/assets/images/AngularJS_logo.png" style="width: 50%; height: 50%; margin-top: -10%">
+                      
+                        <img ng-src="{{TopicPageVM.image.src}}" alt="UCF Logo" tyle="width: 50%; height: 50%; margin-top: -10%">
                         <hr class="small">
                         <span class="subheading">AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.<br>
                         TL;DR<br>
@@ -73,14 +74,7 @@
                         <h2 class="post-title" style="margin-left: -500px;">
                             Choose a topic:
                         </h2>
-
-        
-                        
-                   <video width="120%" height="120%" controls style="float: right; margin-top: 200px; margin-right: -70%">
-
-                  <source src="../../layouts/assets/videos/angularjs.mp4" type="video/mp4">
-
-                </video>
+                
 
                 <br>
 
@@ -117,7 +111,8 @@
                 <br>Category: {{item.category}}
                 <br>Video Name: {{item.videoName}}
                 <br>Video: {{item.videoLink}}
-                <br>Instructions: {{item.transcript}}
+                
+                Instructions: {{item.transcript}}
             
         </p>
                 
