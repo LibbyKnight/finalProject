@@ -22,9 +22,16 @@ function AdminPageCtrl($stateParams) {
 
 			trancript: ''
 
-		}
+		};
 
-	}
-	}  	
+	};
+
+	vm.image1 = {
+
+ 		src:'/ucfCompanionApp/layouts/assets/images/download.jpg'
+		} ; 
+
+	};
+
 
 

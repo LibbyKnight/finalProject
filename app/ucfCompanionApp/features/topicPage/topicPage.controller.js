@@ -18,7 +18,7 @@ function TopicPageCtrl(getVideo) {
         vm.videoInfo = response.data;
     });
 
-    vm.image = {
+    vm.image1 = {
  		src:'/ucfCompanionApp/layouts/assets/images/AngularJS_logo.png'
 	} ; 
 
