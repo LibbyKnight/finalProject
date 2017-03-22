@@ -21,13 +21,8 @@ function AdminPageCtrl($stateParams) {
 
 	};
 
-	vm.image1 = {
-
- 		src:'/ucfCompanionApp/layouts/assets/images/download.jpg'
-		}; 
-
-		 vm.AddNewVideo = function() {
-		 	console.log(d)
+	 vm.AddNewVideo = function() {
+		 	console.log(getVideo);
         getVideo.AddNewVideo(vm.newVideo);
         addVideo();
    	 	};

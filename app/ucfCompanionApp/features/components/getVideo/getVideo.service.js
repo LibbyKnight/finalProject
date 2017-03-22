@@ -6,7 +6,12 @@ function GetVideoService($http) {
     return {
         // getting all the videos from the router
         getTheVideo: function (getVideo) {
-            return $http.get('/api');
+             $http.get('/api')
+             .then(function (response) {
+                    response.data.forEach(function(item) {
+                        todos.push(item);
+                    });
+                });
         },
 
         // adding a new video via the router
