@@ -71,14 +71,14 @@ app.post('/', function(req, res) {
 
   // create a new todo object
   var newInstructions = new Instructions({
-    category: category,
-    videoName: videoName,
-    videoLink: videoLink,
-    transcript: transcript
+    category: req.body.category,
+    videoName: req.body.videoName,
+    videoLink: req.body.videoLink,
+    transcript: req.body.transcript
   });
 
 newInstructions.save(function (err, newInstructions) {
-    if (error) console.log('error saving to list', err);
+    if (error) console.log('error saving to db', err);
     response.sendStatus(200);
   });
 

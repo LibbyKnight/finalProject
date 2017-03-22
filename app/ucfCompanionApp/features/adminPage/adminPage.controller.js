@@ -3,7 +3,7 @@ angular
     .controller('AdminPageCtrl', AdminPageCtrl); // Define our controller (Notice the naming convention - uppercase first letter, Ctrl suffix)
 
 
-function AdminPageCtrl($stateParams) {
+function AdminPageCtrl(getVideo, $http) {
     var vm = this; // vm stands for View Model - anything on "the vm" is exposed to the view
 	
 	vm.addVideo = function() {
@@ -20,6 +20,8 @@ function AdminPageCtrl($stateParams) {
 		};
 
 	};
+
+	
 
 	 vm.AddNewVideo = function() {
 		 	console.log(getVideo);
