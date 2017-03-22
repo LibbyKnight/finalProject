@@ -105,16 +105,29 @@
 
                      
    
-        <p ng-repeat="item in TopicPageVM.videoInfo">
+        <div>
            
               
-                <br>Category: {{item.category}}
-                <br>Video Name: {{item.videoName}}
-                <br>Video: {{item.videoLink}}
+                <br>Category: {{TopicPageVM.videoInfo.category}}
+                <br>Video Name: {{TopicPageVM.videoInfo.videoName}}
+
+                <div ng-if="!TopicPageVM.videoInfo.videoLink">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" />
+                </div>
+
+                <div ng-if="TopicPageVM.videoInfo.videoLink">
+                    <video width="120%" height="120%" controls style="float: right; margin-top: 200px; margin-right: -70%">
+                       <source src="{{TopicPageVM.videoInfo.videoLink}}" type="video/mp4">
+                    </video>
+                </div>
                 
-                Instructions: {{item.transcript}}
+                Instructions: 
+                <pre>{{TopicPageVM.instructions}}</pre>
+                <!-- <div ng-repeat="instruction in TopicPageVM.instructions">
+                    <pre>{{instruction | json}}</pre>
+                </div> -->
             
-        </p>
+        </div>
                 
                 
                 <!-- Print Flashcard -->

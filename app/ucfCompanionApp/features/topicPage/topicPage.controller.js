@@ -3,39 +3,60 @@ angular
     .controller('TopicPageCtrl', TopicPageCtrl); // Define our controller (Notice the naming convention - uppercase first letter, Ctrl suffix)
 
 
-function TopicPageCtrl(getVideo) {
+function TopicPageCtrl(getVideo, $scope) {
   
 	var vm = this;
 
 	// set a variable to stare the data from the db
 	vm.videoInfo = [];
 
+	// instructions
+	vm.instructions = [];
+
 	// use the makeTheDate function to get a date w/o time component
 	// vm.currentDate = makeTheDate();
 
 	// use the getVideo service to get all our getVideo from the database
 	getVideo.getTheVideo(vm.videoInfo).then(function (response) {
-        vm.videoInfo = response.data;
-    });
+        vm.videoInfo = response.data[0];
+        vm.videoInfo.transcript = JSON.parse(response.data[0].transcript);
+        console.log(vm.videoInfo);
 
-    vm.image1 = {
- 		src:'/ucfCompanionApp/layouts/assets/images/AngularJS_logo.png'
-	} ; 
+		var x = setInterval(function() {
+			var video = $('video')[0];
+			console.log(video.currentTime);
 
-	// when user clicks task comleted on the list state, use the getVideo
-	// service to change the status of isCompleted to true
-	// send the id, and the status we want to update it to
-	// vm.updatedStatus = function(id) {
-	// 	// console.log(id);
-	// 	getVideo.editVideo(id, true);
-	// }
+			var keys = Object.keys(vm.videoInfo.transcript);
 
-	// function for getting the current date w/o the time component
-	// function makeTheDate() {
-	// 	var fullCurrentDate = new Date();
-	// 	// get rid of the hours part of the date
-	// 	fullCurrentDate.setHours(0, 0, 0, 0);
-	// 	return fullCurrentDate;
-	// }  	
+			for(var i = 0; i < keys.length; i++) {
+				var time = keys[i];
+				var transcript = vm.videoInfo.transcript[time];
+				$scope.$apply();
+				if (parseInt(time) > video.currentTime) {
+					if (vm.instructions.indexOf(transcript) > 0) {
+						vm.instructions = [];
+						$scope.$apply();
+						break;
+					}
+					
+				}
+
+				if (parseInt(time) <= video.currentTime) {
+					if (vm.instructions.indexOf(transcript) < 0) {
+						vm.instructions.push(transcript);
+						$scope.$apply();
+						break;						
+					}
+
+				}
+			}
+
+
+			// if (vm.videoInfo.transcript)
+			// if (vm.videoInfo.transcript[x[0].currentTime]) {
+			// 	console.log(vm.videoInfo.transcript[x[0].currentTime]);
+			// }
+		}, 250);
+    });	
 
 }
