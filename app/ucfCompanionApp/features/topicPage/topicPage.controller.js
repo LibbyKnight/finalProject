@@ -24,6 +24,9 @@ function TopicPageCtrl(getVideo, $scope) {
 
 		var x = setInterval(function() {
 			var video = $('video')[0];
+
+			if (video.paused) return;
+
 			console.log(video.currentTime);
 
 			var keys = Object.keys(vm.videoInfo.transcript);

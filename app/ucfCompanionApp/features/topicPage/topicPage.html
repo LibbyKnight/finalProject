@@ -122,10 +122,11 @@
                 </div>
                 
                 Instructions: 
-                <pre>{{TopicPageVM.instructions}}</pre>
-                <!-- <div ng-repeat="instruction in TopicPageVM.instructions">
-                    <pre>{{instruction | json}}</pre>
-                </div> -->
+                <ul>
+                    <li ng-repeat="instruction in TopicPageVM.instructions">
+                        {{instruction}}
+                    </li>
+                </ul>
             
         </div>
                 
