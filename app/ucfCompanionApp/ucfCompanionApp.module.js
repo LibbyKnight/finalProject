@@ -11,5 +11,5 @@ angular
 	.config(ucfCompanionAppConfig);
 
 function ucfCompanionAppConfig($urlRouterProvider) {
-	$urlRouterProvider.otherwise('/');
+	$urlRouterProvider.otherwise('/main');
 }
