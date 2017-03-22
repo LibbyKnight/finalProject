@@ -13,7 +13,7 @@ var Instructions = require("./api/model/model");
 var app = express();
 
 //Port
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 // set up body-parser
 app.use(logger("dev"));
