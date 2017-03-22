@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(__dirname + "/app/ucfCompanionApp/"));
 
 //Connection to database
-mongoose.connect("mongodb://localhost/model");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/model");
 
 // Save mongoose connection to db
 var db = mongoose.connection;
