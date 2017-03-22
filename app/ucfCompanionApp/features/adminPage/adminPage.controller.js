@@ -21,12 +21,11 @@ function AdminPageCtrl(getVideo, $http) {
 
 	};
 
-	
+
 
 	 vm.AddNewVideo = function() {
-		 	console.log(getVideo);
-        getVideo.AddNewVideo(vm.newVideo);
-        addVideo();
+        getVideo.addVideo(vm.newVideo);
+        
    	 	};
 
 	};

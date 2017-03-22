@@ -15,16 +15,11 @@ function GetVideoService($http) {
         },
 
         // adding a new video via the router
-        addVideo: function (category, videoName, videoLink, transcript) {
+        addVideo: function (newVideo) {
         	$http({
         		method: 'POST',
         		url: '/api',
-        		data: {
-        			category: category,
-        			videoName: videoName,
-                    videoLink: videoLink,
-                    transcript: transcript
-        		}
+        		data: newVideo
         	}).then(function (response) {
                 // do nothing
             }).catch(function (error) {

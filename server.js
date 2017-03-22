@@ -4,6 +4,7 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
+mongoose.Promise = global.Promise;
 
 //Require the model
 var Instructions = require("./api/model/model");
@@ -47,7 +48,6 @@ db.once("open", function() {
 
 
 app.get("/api", function(req, res) {
-  console.log('hit');
   Instructions.find({}, function(err, data) {
 
   	if (err) {
@@ -62,13 +62,8 @@ app.get("/api", function(req, res) {
 });
 
 
-
-app.post('/api', function(req, res, next) {
+app.post('/api', function(req, res) {
   console.log(req.body);
-});
-
-app.post('/', function(req, res) {
-
   // create a new todo object
   var newInstructions = new Instructions({
     category: req.body.category,
@@ -78,8 +73,8 @@ app.post('/', function(req, res) {
   });
 
 newInstructions.save(function (err, newInstructions) {
-    if (error) console.log('error saving to db', err);
-    response.sendStatus(200);
+    if (err) console.log('error saving to db', err);
+    res.sendStatus(200);
   });
 
 });
