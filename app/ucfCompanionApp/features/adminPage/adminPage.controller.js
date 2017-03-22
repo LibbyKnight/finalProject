@@ -10,16 +10,11 @@ function AdminPageCtrl($stateParams) {
 
 		getVideo.addVideo(vm.getVideo.category, vm.getVideo.videoName, vm.getVideo.videoLink, vm.getVideo.trancript);
 
-
-
 		vm.newVideo = {
 
 			catergory: '',
-
 			videoName: '',
-
 			videoLink: '',
-
 			trancript: ''
 
 		};
@@ -29,7 +24,13 @@ function AdminPageCtrl($stateParams) {
 	vm.image1 = {
 
  		src:'/ucfCompanionApp/layouts/assets/images/download.jpg'
-		} ; 
+		}; 
+
+		 vm.AddNewVideo = function() {
+		 	console.log(d)
+        getVideo.AddNewVideo(vm.newVideo);
+        addVideo();
+   	 	};
 
 	};
 

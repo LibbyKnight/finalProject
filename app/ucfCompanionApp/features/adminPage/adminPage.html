@@ -36,7 +36,7 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('../../layouts/assets/images/download.jpg')">
+    <header class="intro-header" style="background-image: url('/layouts/assets/images/download.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -62,28 +62,28 @@
                      <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Enter Video Category:</label>
-                            <input class="form-control" name="category" placeholder="Category" type="text" ng-model="AdminPageVM.newVideo.category">
+                            <input class="form-control" name="category" placeholder="Category" type="text" ng-model="AdminPageVM.newVideo.category"><p class="help-block text-danger"></p>
                             
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Enter Video Name:</label>
-                            <input class="form-control" name="videoName" placeholder="Video Name" type="text" ng-model="AdminPageVM.newVideo.videoName">
+                            <input class="form-control" name="videoName" placeholder="Video Name" type="text" ng-model="AdminPageVM.newVideo.videoName"><p class="help-block text-danger"></p>
                         </div>
                     </div>
                    
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Video Link:</label>
-                            <input class="form-control" name="videoName" placeholder="Video Link" type="text" ng-model="AdminPageVM.newVideo.videoLink">
+                            <input class="form-control" name="videoName" placeholder="Video Link" type="text" ng-model="AdminPageVM.newVideo.videoLink"><p class="help-block text-danger"></p>
                         </div>
                     </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Enter Video Transcript:</label>
-                            <textarea rows="5" class="form-control"name="videoName" placeholder="Video Link" type="text" ng-model="AdminPageVM.newVideo.videoLink"> id="message" required data-validation-required-message="Please enter a message."></textarea>
+                            <textarea rows="5" class="form-control" name="transcript" placeholder="Video Transcript" type="text" ng-model="AdminPageVM.newVideo.transcript"></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                     <div id="success"></div>
                     <div class="row">
                         <div class="form-group col-xs-12">
-                            <button type="submit" class="btn btn-default">Send</button>
+                            <input type="button" value="Save" ng-click="AdminPageVM.addNewVideo()">
                         </div>
                     </div>
                 </form>

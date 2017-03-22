@@ -9,7 +9,7 @@ function landingPageConfig($stateProvider) {
      $stateProvider.state({
         name: 'landing', // name of the route
         url: '/', // url endpoint for the route
-        templateUrl: '/ucfCompanionApp/features/landingPage/landingPage.html', // The url to the view template
+        templateUrl: '/features/landingPage/landingPage.html', // The url to the view template
         controller: 'LandingPageCtrl', // The name of the controller to use for this route
         controllerAs: 'LandingPageVM' // The namespace for the view to access the view model
     })

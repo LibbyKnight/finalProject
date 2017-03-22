@@ -9,7 +9,7 @@ function mainpageConfig($stateProvider) {
      $stateProvider.state({
         name: 'main', // name of the route
         url: '/main', // url endpoint for the route
-        templateUrl: '/ucfCompanionApp/features/mainPage/mainPage.html', // The url to the view template
+        templateUrl: '/features/mainPage/mainPage.html', // The url to the view template
         controller: 'MainPageCtrl', // The name of the controller to use for this route
         controllerAs: 'MainPageVM' // The namespace for the view to access the view model
     })

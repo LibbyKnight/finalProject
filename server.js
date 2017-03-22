@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Setting the public static directory
-app.use(express.static(__dirname + "/app"));
+app.use(express.static(__dirname + "/app/ucfCompanionApp/"));
 
 //Connection to database
 mongoose.connect("mongodb://localhost/model");
@@ -41,9 +41,7 @@ db.once("open", function() {
 });
 
 // Alerting that we have a port connection
-app.listen(PORT, function() {
-	console.log("listening on port:" + PORT);
-});
+
 
  module.exports = db;
 
@@ -86,16 +84,22 @@ newInstructions.save(function (err, newInstructions) {
 
 });
 
-app.put('/api', function(request, response) {
+// app.put('/api', function(request, response) {
 
-  newInstructions.findOneAndUpdate(request.body._id, {isCompleted: request.body.isCompleted}, function(error, data) {
+//   newInstructions.findOneAndUpdate(request.body._id, {isCompleted: request.body.isCompleted}, function(error, data) {
 
-    if (error) console.log('error updating to do list');
+//     if (error) console.log('error updating to do list');
 
-    response.sendStatus(200);
+//     response.sendStatus(200);
 
-  });
+//   });
 
 
 
+// });
+
+
+
+app.listen(PORT, function() {
+  console.log("listening on port:" + PORT);
 });

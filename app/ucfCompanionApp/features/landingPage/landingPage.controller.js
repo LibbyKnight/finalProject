@@ -7,7 +7,7 @@ function LandingPageCtrl($stateParams) {
     var vm = this; 
 	
 	vm.image = {
- 		src:'/ucfCompanionApp/layouts/assets/images/ucf.jpg'
+ 		src:'/layouts/assets/images/ucf.jpg'
 	} ; 	
 
 };
