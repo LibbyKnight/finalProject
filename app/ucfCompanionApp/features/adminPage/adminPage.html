@@ -33,7 +33,6 @@
     </nav>
 
     <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
     <header class="intro-header" style="background-image: url('/layouts/assets/images/download.jpg')">
         <div class="container">
             <div class="row">
@@ -41,7 +40,7 @@
                     <div class="page-heading">
                         <h1>Admin Side</h1>
                         <hr class="small">
-                        <span class="subheading">Have questions? I have answers (maybe).</span>
+                        <span class="subheading">Welcome to the Instructor Page for the UCF Bootcamp Student Companion Tool.</span>
                     </div>
                 </div>
             </div>
@@ -89,7 +88,30 @@
                     <div id="success"></div>
                     <div class="row">
                         <div class="form-group col-xs-12">
-                            <input type="button" value="Save" ng-click="AdminPageVM.AddNewVideo()">
+                            <input type="button" data-toggle="modal" data-target="#myModal" value="Save" ng-click="AdminPageVM.AddNewVideo()">
+
+                            <div class="container">
+  
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">HEY IT WORKS!</h4>
+        </div>
+        <div class="modal-body">
+          <p>Your video was succesfully added.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
                         </div>
                     </div>
                 </form>

@@ -21,10 +21,21 @@ function AdminPageCtrl(getVideo, $http) {
 
 	};
 
+function resetView() {
 
+    vm.addVideo= {
+
+ 		    catergory: '',
+			videoName: '',
+			videoLink: '',
+			trancript: ''
+    };
+
+};
 
 	 vm.AddNewVideo = function() {
         getVideo.addVideo(vm.newVideo);
+        resetView();
         
    	 	};
 

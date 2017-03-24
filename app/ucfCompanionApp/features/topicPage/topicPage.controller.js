@@ -1,18 +1,19 @@
 angular
-    .module('ucfCompanionApp.topicPage') // No array, as we are "extending" the module
-    .controller('TopicPageCtrl', TopicPageCtrl); // Define our controller (Notice the naming convention - uppercase first letter, Ctrl suffix)
+    .module('ucfCompanionApp.topicPage') 
+    .controller('TopicPageCtrl', TopicPageCtrl);
 
 
 function TopicPageCtrl(getVideo, $scope) {
     var vm = this;
 
-    // set a variable to stare the data from the db
+
+    // set a variable to get the data from the db
     vm.videoInfo = [];
 
     // instructions
     vm.instructions = [];
 
-    // use the getVideo service to get all our getVideo from the database
+    // use the getVideo service to get Video info from the database
     getVideo.getTheVideo(vm.videoInfo).then(function (response) {
         vm.videoInfo = response.data[0];
         vm.videoInfo.transcript = JSON.parse(response.data[0].transcript);
