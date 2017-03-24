@@ -13,9 +13,7 @@ function TopicPageCtrl(getVideo, $scope) {
 	// instructions
 	vm.instructions = [];
 
-	// use the makeTheDate function to get a date w/o time component
-	// vm.currentDate = makeTheDate();
-
+	var creatingState;
 	// use the getVideo service to get all our getVideo from the database
 	getVideo.getTheVideo(vm.videoInfo).then(function (response) {
         vm.videoInfo = response.data[0];
@@ -30,9 +28,11 @@ function TopicPageCtrl(getVideo, $scope) {
 			console.log(video.currentTime);
 
 			var keys = Object.keys(vm.videoInfo.transcript);
+			console.log(keys, "keys");
 
 			for(var i = 0; i < keys.length; i++) {
 				var time = keys[i];
+				console.log(time, "time");
 				var transcript = vm.videoInfo.transcript[time];
 				$scope.$apply();
 				if (parseInt(time) > video.currentTime) {
@@ -54,12 +54,22 @@ function TopicPageCtrl(getVideo, $scope) {
 				}
 			}
 
+			var creatingState = keys[0];
+    	console.log(creatingState, "STATE");
+
 
 			// if (vm.videoInfo.transcript)
 			// if (vm.videoInfo.transcript[x[0].currentTime]) {
 			// 	console.log(vm.videoInfo.transcript[x[0].currentTime]);
 			// }
 		}, 250);
-    });	
+    });		
+
+    		vm.goToTime = function(time) {
+		      console.log(time, "TIMEEEEE");
+		        
+		   	 	};
+
+    	
 
 }

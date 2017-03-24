@@ -7,11 +7,6 @@ function GetVideoService($http) {
         // getting all the videos from the router
         getTheVideo: function (getVideo) {
              return $http.get('/api');
-             // .then(function (response) {
-             //        response.data.forEach(function(item) {
-             //            todos.push(item);
-             //        });
-             //    });
         },
 
         // adding a new video via the router
@@ -27,16 +22,15 @@ function GetVideoService($http) {
             });
         },
 
-        // updating a video from complete to incomplete and vice versa
-        // id is the video item id, and completed is a boolean true/false
-        // for setting the status of the video
-        // editVideo: function (id, completed) {
+        // updating a video
+
+        // editVideo: function (id) {
         //     $http({
         // 		method: 'PUT',
         // 		url: '/api',
         // 		data: {
         // 			_id: id,
-        // 			isCompleted: completed
+        // 			
         // 		}
         // 	}).then(function (response) {
         //         //do nothing

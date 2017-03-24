@@ -87,7 +87,7 @@
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a href="#">Creating a state</a></li>
+                <li><a ng-click="TopicPageVM.goToTime('1270:08')">Creating a state</a></li>
                 <li><a href="#">Creating a directive</a></li>
                 <li><a href="#">Creating a service</a></li>
                 <li><a href="#">Creating a library</a></li>
@@ -118,7 +118,7 @@
                 </div>
 
                 <div ng-if="TopicPageVM.videoInfo.videoLink">
-                    <video width="100%" height="100%" controls style="margin-left: 500px; margin-top: -99px">
+                    <video id="video" width="100%" height="100%" controls style="margin-left: 500px; margin-top: -99px">
                        <source src="{{TopicPageVM.videoInfo.videoLink}}" type="video/mp4">
                     </video>
                 </div>
@@ -127,7 +127,12 @@
             
         </div>
                 
-                
+            <script>
+                document.getElementById('video').addEventListener('loadedmetadata', function() {
+                  this.currentTime = 50;
+                }, false);
+
+            </script>
                 <!-- Print Flashcard -->
                 <ul class="pager" style="margin-bottom: -50%; margin-left: -60%;">
 
@@ -144,7 +149,7 @@
     </div>
 
 </video-info>
-    <hr>
+   
 
     <!-- Footer -->
     <footer style="position: absolute;
