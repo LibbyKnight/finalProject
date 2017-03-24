@@ -118,21 +118,22 @@
                 </div>
 
                 <div ng-if="TopicPageVM.videoInfo.videoLink">
-                    <video id="video" width="100%" height="100%" controls style="margin-left: 500px; margin-top: -99px">
+                    <video id="video" width="100%" height="100%" autoplay controls style="margin-left: 500px; margin-top: -99px">
                        <source src="{{TopicPageVM.videoInfo.videoLink}}" type="video/mp4">
                     </video>
+
                 </div>
                 
                   
             
         </div>
                 
-            <script>
+            <!-- <script>
                 document.getElementById('video').addEventListener('loadedmetadata', function() {
                   this.currentTime = 50;
                 }, false);
 
-            </script>
+            </script> -->
                 <!-- Print Flashcard -->
                 <ul class="pager" style="margin-bottom: -50%; margin-left: -60%;">
 
