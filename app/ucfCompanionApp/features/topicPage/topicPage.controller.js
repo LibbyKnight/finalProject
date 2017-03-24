@@ -54,9 +54,16 @@ function TopicPageCtrl(getVideo, $scope) {
 				}
 			}
 
-			var creatingState = keys[0];
-    	console.log(creatingState, "STATE");
 
+
+			var creatingState = video.currentTime === keys[0];
+    	console.log(creatingState, "STATE");
+vm.goToTime = function(time) {
+    			   var video = $('video')[0];
+        			console.log(video);
+        		video.currentTime = parseInt(time);
+    };
+		      console.log(time, "TIMEEEEE");
 
 			// if (vm.videoInfo.transcript)
 			// if (vm.videoInfo.transcript[x[0].currentTime]) {
@@ -65,11 +72,10 @@ function TopicPageCtrl(getVideo, $scope) {
 		}, 250);
     });		
 
-    		vm.goToTime = function(time) {
-		      console.log(time, "TIMEEEEE");
+    		
 		        
 		   	 	};
 
     	
 
-}
+
