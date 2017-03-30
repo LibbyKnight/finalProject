@@ -42,7 +42,7 @@ function AdminPageCtrl(getVideo, $http, $scope) {
    	 	};
 
 
-   	 vm.addNewField = function () {
+   	 $scope.addNewField = function () {
    	 		
    	 	vm.transcripts.push({});
 
