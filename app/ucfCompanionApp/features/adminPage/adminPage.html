@@ -83,23 +83,23 @@
                   </div>
                    
                 
-                    <fieldset data-ng-repeat="field in fields">
+                    <fieldset data-ng-repeat="transcript in AdminPageVM.transcripts">
 
                     <label for="field">Video Transcript Time</label>
 
-                    <input type="text" class="form-control" id="field1" ng-model="AdminPageVM.newVideo.transcript"  placeholder="Time">
-                <br><br>
+                    <input type="text" class="form-control col-xs-2" id="field1" ng-model="transcript.time"  placeholder="Time">
+<br><br>
                   
                     <label for="field2">Video Transcript Text</label>
 
-                  <textarea class="form-control" rows="3" ng-model="AdminPageVM.newVideo.transcript" placeholder="Transcript Text">
+                  <textarea class="form-control" rows="3" ng-model="transcript.text" placeholder="Transcript Text">
                   </textarea>
                               
                     </fieldset>
 
                        <br>
 
-                    <button ng-click="addNewField()"><i class="icon-plus"></i>Add Another Field</button>
+                    <button ng-click="AdminPageVM.addNewField()"><i class="icon-plus"></i>Add Another Field</button>
 
             </div>
 

@@ -5,10 +5,10 @@ angular
 
 function AdminPageCtrl(getVideo, $http, $scope) {
     var vm = this; 
-	
-	$scope.fields = [{id: 'field1'}];
-	vm.addVideo = function() {
 
+    vm.transcripts = [{}];
+	
+	vm.addVideo = function() {
 		getVideo.addVideo(vm.getVideo.category, vm.getVideo.videoName, vm.getVideo.videoLink, vm.getVideo.trancript);
 
 		vm.newVideo = {
@@ -22,19 +22,20 @@ function AdminPageCtrl(getVideo, $http, $scope) {
 
 	};
 
-function resetView() {
+	function resetView() {
 
-    vm.addVideo= {
+	    vm.addVideo= {
 
- 		    catergory: '',
-			videoName: '',
-			videoLink: '',
-			trancript: ''
-    };
+	 		    catergory: '',
+				videoName: '',
+				videoLink: '',
+				trancript: ''
+	    };
 
-};
+	};
 
 	 vm.AddNewVideo = function() {
+	 	console.log('transcripts', vm.transcripts);
         getVideo.addVideo(vm.newVideo);
         resetView();
         
@@ -43,9 +44,7 @@ function resetView() {
 
    	 $scope.addNewField = function () {
    	 		
-   	 	var newField = $scope.fields.length+1;
-
-  		$scope.fields.push({'id':'field'+newField});
+   	 	vm.transcripts.push({});
 
 		};
 
