@@ -83,23 +83,27 @@
                   </div>
                    
                 
-                    <div class="form-group col-xs-2" ng-repeat="field in fields">
+                    <fieldset data-ng-repeat="field in fields">
 
-                    <label for="field" ng-show="showFieldLabel(field)">Video Transcript Time</label>
+                    <label for="field">Video Transcript Time</label>
 
-                    <input type="text" class="form-control" id="field" ng-model="AdminPageVM.newVideo.transcript"  placeholder="Time">
-
+                    <input type="text" class="form-control col-xs-2" id="field1" ng-model="AdminPageVM.newVideo.transcript"  placeholder="Time">
+<br><br>
                   
-
                     <label for="field2">Video Transcript Text</label>
+
                   <textarea class="form-control" rows="3" ng-model="AdminPageVM.newVideo.transcript" placeholder="Transcript Text">
                   </textarea>
-             
-                    <br>
+                              
+                    </fieldset>
 
-                    <button ng-click="addNewField()" ng-show="showAddField(field)"><i class="icon-plus"></i>Add Another Field</button>
+                       <br>
+
+                    <button ng-click="addNewField()"><i class="icon-plus"></i>Add Another Field</button>
 
             </div>
+
+                     
                     <div id="success"></div>
                     <div class="row">
                         <div class="form-group col-xs-12">
@@ -107,7 +111,7 @@
 
                             <div class="container">
   
-</form>
+            
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
