@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="page-heading">
-                        <h1>Admin Side</h1>
+                        <h1>Instructor Side</h1>
                         <hr class="small">
                         <span class="subheading">Welcome to the Instructor Page for the UCF Bootcamp Student Companion Tool.</span>
                     </div>
@@ -51,40 +51,55 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>Use the form below to add a new video</p>
+                <p>Use the form below to add a new student.l</p>
                 <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
                 <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
                 <!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
                 <form name="sentMessage" id="contactForm" novalidate>
-                     <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Video Category:</label>
-                            <input class="form-control" name="category" placeholder="Enter Video Category" type="text" ng-model="AdminPageVM.newVideo.category"><p class="help-block text-danger"></p>
-                            
-                        </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Video Name:</label>
-                            <input class="form-control" name="videoName" placeholder="Enter Video Name" type="text" ng-model="AdminPageVM.newVideo.videoName"><p class="help-block text-danger"></p>
-                        </div>
-                    </div>
+                    
+
+                  <div class="form-group">
+
+                    <label for="exampleInputEmail1">Video Category</label>
+
+                    <input type="text" class="form-control" id="exampleInputEmail1" ng-model="AdminPageVM.newVideo.category" placeholder="Category">
+
+                  </div>
+
+
+                     <div class="form-group">
+
+                    <label for="exampleInputEmail1">Video Name</label>
+
+                    <input type="text" class="form-control" id="exampleInputEmail1" ng-model="AdminPageVM.newVideo.videoName"  placeholder="Name">
+
+                  </div>
+                   <div class="form-group">
+
+                    <label for="exampleInputEmail1">Video Link</label>
+
+                    <input type="text" class="form-control" id="exampleInputEmail1" ng-model="AdminPageVM.newVideo.videoLink"  placeholder="Link">
+
+                  </div>
                    
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Video Link:</label>
-                            <input class="form-control" name="videoName" placeholder="Video Link" type="text" ng-model="AdminPageVM.newVideo.videoLink"><p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Video Transcript:</label>
-                            <textarea rows="5" class="form-control" name="transcript" placeholder="Enter Video Transcript" type="text" ng-model="AdminPageVM.newVideo.transcript"></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
+                
+                    <div class="form-group col-xs-2" ng-repeat="field in fields">
+
+                    <label for="field" ng-show="showFieldLabel(field)">Video Transcript Time</label>
+
+                    <input type="text" class="form-control" id="field" ng-model="AdminPageVM.newVideo.transcript"  placeholder="Time">
+
+                  
+
+                    <label for="field2">Video Transcript Text</label>
+                  <textarea class="form-control" rows="3" ng-model="AdminPageVM.newVideo.transcript" placeholder="Transcript Text">
+                  </textarea>
+             
                     <br>
+
+                    <button ng-click="addNewField()" ng-show="showAddField(field)"><i class="icon-plus"></i>Add Another Field</button>
+
+            </div>
                     <div id="success"></div>
                     <div class="row">
                         <div class="form-group col-xs-12">
@@ -92,7 +107,7 @@
 
                             <div class="container">
   
-
+</form>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -121,42 +136,30 @@
 
     <hr>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
+  <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
                         <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
-                </div>
+                        <a href="https://www.facebook.com/ucfcodingbootcamp/?fref=ts" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </li>
+                      <li>
+                        <a href="https://www.linkedin.com/showcase/7946767/" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/UCF-Coding-Boot-Camp">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; BSL 2017</p>
             </div>
         </div>
-    </footer>
-</div>
-   
+    </div>
+</footer>
 

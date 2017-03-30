@@ -21,6 +21,7 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "mongoose": "^4.8.7",
-    "morgan": "^1.8.1"
+    "morgan": "^1.8.1",
+    "passport-github2": "^0.1.10"
   }
 }
