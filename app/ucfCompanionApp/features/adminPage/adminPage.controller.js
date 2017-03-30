@@ -41,7 +41,7 @@ function resetView() {
    	 	};
 
 
-   	 vm.addNewField = function () {
+   	 $scope.addNewField = function () {
    	 		
    	 	var newField = $scope.fields.length+1;
 
