@@ -49,19 +49,44 @@
     </header>
 
     <!-- Post Content -->
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+   <div class="form-group">
 
-                   
+                    <label for="exampleInputEmail1">Student First Name</label>
 
-                 
-                </div>
+                    <input type="text" class="form-control" id="exampleInputEmail1" ng-model="AdminPageVM.newVideo.category" placeholder="First Name">
+
+                  </div>
+
+
+                     <div class="form-group">
+
+                    <label for="exampleInputEmail1">Student Last Name</label>
+
+                    <input type="text" class="form-control" id="exampleInputEmail1" ng-model="AdminPageVM.newVideo.videoName"  placeholder="Last Name">
+
+                  </div>
+                   <div class="form-group">
+
+                    <label for="exampleInputEmail1">Git Hub Username</label>
+
+                    <input type="text" class="form-control" id="exampleInputEmail1" ng-model="AdminPageVM.newVideo.videoLink"  placeholder="Username">
+
+                  </div>
+                
+                     <div class="form-group">
+
+                    <label for="exampleInputEmail1">Cohort</label>
+
+                    <input type="text" class="form-control" id="exampleInputEmail1" ng-model="AdminPageVM.newVideo.videoName"  placeholder="Cohort">
+
+                  </div>
+
+                       <br>
+
+                    <button ng-click="AdminPageVM.addNewField()"><i class="icon-plus"></i>Add Another Field</button>
+
             </div>
-        </div>
-    </article>
+
 
     <hr>
 

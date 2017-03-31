@@ -34,6 +34,14 @@ var Students = new Schema({
     required: "Username is required.",
     unique: true
     
+  },
+
+    cohort: {
+
+    type: String,
+    required: "Cohort is required.",
+    unique: true
+    
   }
 
 });

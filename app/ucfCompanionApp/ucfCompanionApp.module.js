@@ -4,7 +4,11 @@ angular
 		// 'ucfCompanionApp.landingPage',
 		'ucfCompanionApp.mainPage',
 		'ucfCompanionApp.topicPage',
-		'ucfCompanionApp.adminPage'
+		'ucfCompanionApp.adminPage',
+		'ucfCompanionApp.rosterPage',
+		'ucfCompanionApp.landingPage',
+
+
 
 	])
 

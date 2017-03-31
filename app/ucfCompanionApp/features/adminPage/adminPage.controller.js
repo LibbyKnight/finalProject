@@ -3,7 +3,7 @@ angular
     .controller('AdminPageCtrl', AdminPageCtrl);
 
 
-function AdminPageCtrl(getVideo, $http, $scope) {
+function AdminPageCtrl(getVideo, $http) {
     var vm = this; 
 
     vm.transcripts = [{}];
@@ -42,7 +42,7 @@ function AdminPageCtrl(getVideo, $http, $scope) {
    	 	};
 
 
-   	 $scope.addNewField = function () {
+   	 vm.addNewField = function () {
    	 		
    	 	vm.transcripts.push({});
 

@@ -3,6 +3,11 @@ var express = require('express');
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
+var passport = require("passport");
+var session = require("express-session");
+var GitHubStrategy = require('passport-github2').Strategy;
+var partials = require('express-partials');
+var util = require('util');
 
 mongoose.Promise = global.Promise;
 
@@ -46,6 +51,76 @@ db.once("open", function() {
 
  module.exports = db;
 
+ //Passport setup----------------------------------------
+
+app.use(partials());
+app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+var GITHUB_CLIENT_ID = "b9faea0142a154de9650";
+var GITHUB_CLIENT_SECRET = "c93b666be99b26bf3b1f70d6820f75f73a5240ab";
+
+passport.serializeUser(function(user, done) {
+  done(null, user);
+
+});passport.use(new GitHubStrategy({
+    clientID: GITHUB_CLIENT_ID,
+    clientSecret: GITHUB_CLIENT_SECRET,
+    callbackURL: "http://127.0.0.1:3000/auth/github/callback"
+
+  },
+
+  function(accessToken, refreshToken, profile, done) {
+
+    process.nextTick(function () {
+      return done(null, profile);
+
+    });
+  }
+));
+
+    app.get('/', function(req, res){
+      res.render('index', { user: req.user });
+
+    });
+
+    app.get('/account', ensureAuthenticated, function(req, res){
+      res.render('account', { user: req.user });
+
+    });
+
+    app.get('/login', function(req, res){
+      res.render('login', { user: req.user });
+
+    });
+
+    app.get('/auth/github',
+      passport.authenticate('github', { scope: [ 'user:email' ] }),
+      function(req, res){
+
+      });
+
+    app.get('/auth/github/callback', 
+      passport.authenticate('github', { failureRedirect: '/login' }),
+      function(req, res) {
+        res.redirect('/');
+
+      });
+
+    app.get('/logout', function(req, res){
+      req.logout();
+      res.redirect('/');
+
+    });
+
+    function ensureAuthenticated(req, res, next) {
+
+      if (req.isAuthenticated()) { return next(); }
+       res.redirect('/login')
+
+    }
+//-------------------------------------------------------
 
 app.get("/api", function(req, res) {
   Instructions.find({}, function(err, data) {
