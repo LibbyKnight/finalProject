@@ -8,36 +8,40 @@ function AdminPageCtrl(getVideo, $http) {
 
     vm.transcripts = [{}];
 	
-	vm.addVideo = function() {
-		getVideo.addVideo(vm.getVideo.category, vm.getVideo.videoName, vm.getVideo.videoLink, vm.getVideo.trancript);
+/*	vm.addVideo = function() {
 
-		vm.newVideo = {
 
-			catergory: '',
-			videoName: '',
-			videoLink: '',
-			trancript: ''
 
-		};
+		getVideo.addVideo({
+			category: vm.getVideo.category,
+			videoName: vm.getVideo.videoName, 
+			videoLink: vm.getVideo.videoLink, 
+			transcript: dbTranscripts
+		});
 
-	};
 
-	function resetView() {
+	};*/
 
-	    vm.addVideo= {
-
-	 		    catergory: '',
-				videoName: '',
-				videoLink: '',
-				trancript: ''
-	    };
-
-	};
 
 	 vm.AddNewVideo = function() {
-	 	console.log('transcripts', vm.transcripts);
-        getVideo.addVideo(vm.newVideo);
-        resetView();
+	 	var dbTranscripts = {};
+
+		for (var i = 0; i < vm.transcripts.length; i++) {
+			var time = vm.transcripts[i].time;
+			var text = vm.transcripts[i].text;
+				dbTranscripts[time] = text;
+		}
+
+		console.log(dbTranscripts);
+
+        getVideo.addVideo({
+			category: vm.newVideo.category,
+			videoName: vm.newVideo.videoName, 
+			videoLink: vm.newVideo.videoLink, 
+			transcript: dbTranscripts
+		});
+        // resetView();
+        // addVideo();
         
    	 	};
 

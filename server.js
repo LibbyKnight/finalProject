@@ -13,6 +13,7 @@ mongoose.Promise = global.Promise;
 
 //Require the model
 var Instructions = require("./api/model/model");
+//var Students = require("./api/model/rosterModel");
 
 //Initialize Express
 var app = express();
@@ -64,10 +65,16 @@ var GITHUB_CLIENT_SECRET = "c93b666be99b26bf3b1f70d6820f75f73a5240ab";
 passport.serializeUser(function(user, done) {
   done(null, user);
 
-});passport.use(new GitHubStrategy({
+});
+
+passport.deserializeUser(function(obj, done) {
+  done(null, obj);
+});
+
+passport.use(new GitHubStrategy({
     clientID: GITHUB_CLIENT_ID,
     clientSecret: GITHUB_CLIENT_SECRET,
-    callbackURL: "http://127.0.0.1:3000/auth/github/callback"
+    callbackURL: "http://localhost:3000/auth/github/callback"
 
   },
 
@@ -80,20 +87,9 @@ passport.serializeUser(function(user, done) {
   }
 ));
 
-    app.get('/', function(req, res){
-      res.render('index', { user: req.user });
-
-    });
-
-    app.get('/account', ensureAuthenticated, function(req, res){
-      res.render('account', { user: req.user });
-
-    });
-
-    app.get('/login', function(req, res){
-      res.render('login', { user: req.user });
-
-    });
+app.get('/api/user', ensureAuthenticated, function(req, res) {
+  res.send(req.user);
+});
 
     app.get('/auth/github',
       passport.authenticate('github', { scope: [ 'user:email' ] }),
@@ -117,7 +113,7 @@ passport.serializeUser(function(user, done) {
     function ensureAuthenticated(req, res, next) {
 
       if (req.isAuthenticated()) { return next(); }
-       res.redirect('/login')
+       res.redirect('/auth/github')
 
     }
 //-------------------------------------------------------
@@ -153,21 +149,6 @@ newInstructions.save(function (err, newInstructions) {
   });
 
 });
-
-// app.put('/api', function(request, response) {
-
-//   newInstructions.findOneAndUpdate(request.body._id, {isCompleted: request.body.isCompleted}, function(error, data) {
-
-//     if (error) console.log('error updating to do list');
-
-//     response.sendStatus(200);
-
-//   });
-
-
-
-// });
-
 
 
 app.listen(PORT, function() {

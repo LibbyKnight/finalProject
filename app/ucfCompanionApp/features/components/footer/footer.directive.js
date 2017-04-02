@@ -1,28 +1,20 @@
 angular
-	.module('ucfCompanionApp.component.navbar')
-	.directive('navbar', Navbar);
+	.module('ucfCompanionApp.component.footer')
+	.directive('footer', Footer);
 
-function Navbar () {
+function Footer () {
 	return {
 		restrict: 'E',
 		scope: {
-			navbarData: '='
+			footerData: '='
 		},
-		templateUrl: '/ucfCompanionApp/features/components/navbar/navbar.html',
-		controller: NavbarCtrl,
-		controllerAs: 'NavbarVM',
+		templateUrl: '/ucfCompanionApp/features/components/footer/footer.html',
+		controller: FooterCtrl,
+		controllerAs: 'FooterVM',
 		bindToController: true
 	}
 }
 
-function NavbarCtrl() {
+function FooterCtrl() {
 
 }
-
-
-
-    // <video width="120%" height="120%" controls style="float: right; margin-top: 200px; margin-right: -70%">
-
-    //               <source src="../../layouts/assets/videos/angularjs.mp4" type="video/mp4">
-
-    //             </video>

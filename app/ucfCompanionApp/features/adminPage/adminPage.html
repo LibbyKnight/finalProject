@@ -1,5 +1,7 @@
 <div class="main">
 
+<link href="/layouts/assets/styles/landingPageTheme/css/landing-page.css" rel="stylesheet">
+
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
@@ -77,50 +79,47 @@
 
                     <label for="exampleInputEmail1">Video Link</label>
 
-                    <input type="text" class="form-control" id="exampleInputEmail1" ng-model="AdminPageVM.newVideo.videoLink"  placeholder="Link">
+                    <input type="text" class="form-control" id="exampleInputEmail1" ng-model="AdminPageVM.newVideo.videoLink" placeholder="Link">
 
                   </div>
                    
-                <!-- <div class="form-group col-xs-2"> -->
+               
                     <fieldset data-ng-repeat="transcript in AdminPageVM.transcripts">
+                     <div class="form-group col-xs-2">
 
                     <label for="field">Transcript Time</label>
 
                     <input type="text" class="form-control" id="field1" ng-model="transcript.time"  placeholder="Time">
-                        <!-- </div> -->
+                        </div>
 
-<br><br>
-                  
+                              <div class="form-group col-xs-10">
                     <label for="field2">Video Transcript Text</label>
 
                   <textarea class="form-control" rows="3" ng-model="transcript.text" placeholder="Transcript Text">
                   </textarea>
-                              
+                             
                     </fieldset>
+                <div class="form-group col-lg-12">
+                    <button class="btn btn-lg btn-success btn-block" ng-click="AdminPageVM.addNewField()"><i class="icon-plus"></i>Add Another Field</button>
 
-                       <br>
-
-                    <button ng-click="AdminPageVM.addNewField()"><i class="icon-plus"></i>Add Another Field</button>
-
-            </div>
+                </div>
 
                      <!--Success Modal -->
-                    <div id="success"></div>
-                    <div class="row">
-                        <div class="form-group col-xs-12">
+                    <!-- <div id="success"></div> -->
+                    <!-- <div class="row"> -->
+                        <div class="form-group col-lg-12">
                             <input type="button" data-toggle="modal" data-target="#myModal" value="Save" ng-click="AdminPageVM.AddNewVideo()">
-
-                            <div class="container">
-  
+                        </div>
             
-
-  <!-- Modal -->
+                    <!-- </div> -->
+               
+              <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">HEY IT WORKS!</h4>
+          <h4 class="modal-title">Alert Message</h4>
         </div>
         <div class="modal-body">
           <p>Your video was succesfully added.</p>
@@ -132,13 +131,7 @@
     </div>
   </div>
 </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
+           
     <hr>
 
   <footer>

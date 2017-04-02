@@ -36,7 +36,7 @@ function TopicPageCtrl(getVideo, $scope) {
                     if (index >= 0) {
                         vm.instructions.splice(index, 1);
                         $scope.$apply();
-                        break;
+                        continue;
                     }
                     
                 }
